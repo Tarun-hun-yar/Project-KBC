@@ -797,9 +797,7 @@
         // ----------tic tic audio on 1st question logic--------------
         window.onload = function () {
             let a = 1;
-document.getElementById("progress-audio").addEventListener("ended", function () {
-                document.getElementById("skipIntroBtn").click();
-            });
+
             document.getElementById("startGameBtn").addEventListener("click", function () {
                 startIntroSoundAudio();
                 this.style.display = 'none';
