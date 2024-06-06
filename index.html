@@ -1,0 +1,3049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    @keyframes zoomInOut {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+    .animate-zoomInOut {
+        animation: zoomInOut 2s ease-in-out infinite;
+    }
+</style>
+
+<body class="bg-cover bg-center h-screen" style="background-image: url(Assets/Wallpaper.png);">
+
+    <div id="firstDiv" class="h-screen flex items-center justify-center">
+        <img src="Assets/1st picture.png" alt="">
+        <button id="startGameBtn" class="bg-blue-700 text-white rounded-md p-3 absolute top-[90%] ">START
+            GAME</button>
+        <button class="hidden bg-green-700 text-white rounded-md p-3 absolute top-[90%] " id="skipIntroBtn">SKIP
+            INTRO</button>
+    </div>
+
+
+    <!-- -------------------Trial Phase---------------------------------- -->
+
+
+
+    <div id="gameStarts" class="hidden">
+        <!-- ------------Instagram and Linkedin profiles---------------------- -->
+        <div class="flex justify-center items-center absolute size-28 top-40 lg:top-10 left-5 space-x-4">
+            <a href="https://www.instagram.com/tarun_hun_yar2/">
+                <img src="Assets/instagram icon.png" alt="linkedIn account">
+            </a>
+
+            <a href="https://www.linkedin.com/in/tarun-thakur-b4bb78274/">
+                <img src="Assets/linkedin icon.png" alt="instagram account">
+            </a>
+        </div>
+        <!-- ---------------------Cureent Question Bar------------------------ -->
+        <div
+            class="absolute flex justify-center mt-2 w-52 xl:w-auto left-[50%] md:left-[70vw] lg:left-[50vw] xl:left-0 lg:ml-[85%] xl:ml-[85%] border-yellow-500 border-2 rounded-md px-2">
+            <div class="flex flex-col w-72 xl:w-auto">
+                <div class="flex justify-between text-white text-lg font-bold" id="7c">
+                    <span>10 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7 Crore</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="1c">
+                    <span>9 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 Crore</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="25l">
+                    <span>8 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25,00,000</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="12l">
+                    <span>7 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12,50,000</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="6l">
+                    <span>6 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6,40,000</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="3l">
+                    <span>5 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3,20,000</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="80k">
+                    <span>4 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; 80,000</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="40k">
+                    <span>3 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 40,000</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold" id="2k">
+                    <span>2 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2,000</span>
+                </div>
+                <div class="flex justify-between text-white text-lg font-bold bg-yellow-500 rounded-md" id="1k">
+                    <span>1 ◊</span>
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1,000</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="timer"
+            class="absolute text-yellow-400 font-bold text-4xl top-[19rem] lg:top-[31rem] xl:top-[20rem] left-40 vsm:left-[12rem] md:left-[22rem] lg:left-[83vw] xl:left-[45.5rem] z-10">
+            30</div>
+        <!-- ------------------lifelies -->
+
+        <!-- ---Q1 LIFELINE------- -->
+        <div class="q1lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q1lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q1-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q1-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ---Q2 LIFELINE------- -->
+        <div class="Q2lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q2lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q2-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q2-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ---Q3 LIFELINE------- -->
+        <div class="Q3lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q3lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q3-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q3-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ---Q4 LIFELINE------- -->
+        <div class="Q4lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q4lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q4-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q4-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ---Q5 LIFELINE------- -->
+        <div class="Q5lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q5lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q5-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q5-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ---Q6 LIFELINE------- -->
+        <div class="Q6lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q6lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q6-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q6-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ---Q7 LIFELINE------- -->
+        <div class="Q7lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q7lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q7-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q7-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ---Q8 LIFELINE------- -->
+        <div class="Q8lifelines absolute top-72 lg:top-[30rem] xl:top-72 hidden" id="q8lifelines">
+            <div class="flex items-center justify-center">
+                <!-- -------------flip the question lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-gray-300"
+                    id="Q8-flip-a-question">
+                    <span class="text-white text-3xl font-bold">Q</span>
+                </div>
+                <!-- -------------50-50 lifeline----------------- -->
+                <div class="flex items-center justify-center size-14 bg-black rounded-full border-4 border-grey-300"
+                    id="Q8-50-50">
+                    <span class="text-white text-lg font-semibold">50:50</span>
+                </div>
+            </div>
+        </div>
+        <!-- ------------- -->
+
+
+        <div class="flex ml-6 md:ml-[35vw] lg:ml-[70vw] lg:mt-10 xl:mt-0 xl:ml-0 justify-start xl:justify-center">
+            <img src="Assets/KBC Logo.png" alt="KBC Logo"
+                class="lg:h-auto h-32 md:size-52 lg:w-96 mt-10 xl:mt-0 lg:mt-0 xl:h-[20rem]">
+        </div>
+        <div class="questiondiv relative">
+            <img src="Assets/Tik Tik Ghadi.png" alt=""
+                class="absolute h-14 top-[8rem] md:top-10 lg:top-[8.5rem] xl:-top-2 left-[37%] md:left-[42vw] lg:left-[80vw] xl:left-[46%]">
+            <div
+                class="allQuestions flex justify-center items-center h-0 absolute top-[14rem] md:top-36 lg:top-60 xl:top-24">
+                <div
+                    class="relative w-[24rem] md:w-[100vw] lg:w-[170vw] xl:w-[100vw] h-[100px] border-4 border-yellow-500 rounded-full shadow-lg bg-gradient-to-b from-purple-900 to-indigo-700">
+                    <div class="absolute inset-0 flex justify-center items-center rounded-full">
+                        <span
+                            class="text-white absolute xl:top-12  xl:left-[40%] font-bold text-2xl xl:text-3xl text-center"
+                            id="question1">Q1.
+                            What is the sum of 2 + 2?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question2">Q2.
+                            What color is the sky on a clear day?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question3">Q3.
+                            Which shape has three sides?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question4">Q4.
+                            Which animal is known as "man's best friend"?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question5">Q5.
+                            What is the capital of France?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question6">Q6.
+                            How many continents are there on Earth?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question7">Q7.
+                            Which planet is known as the Red Planet?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question8">Q8.
+                            Which fruit is known for having seeds on its exterior?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question9">Q9.
+                            What is the largest ocean on Earth?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="question10">Q10.
+                            In which sport do players aim to score a touchdown?</span>
+                        <span
+                            class="text-center text-white absolute xl:top-12 xl:left-[40%] font-bold text-2xl xl:text-3xl hidden"
+                            id="faq">Q.
+                            Who wrote the play "Romeo and Juliet"?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2">
+            <div class="optionA.1stdiv">
+                <div class="flex justify-center items-center h-0 absolute top-[31rem] lg:top-[45rem] xl:top-[33rem]">
+                    <div
+                        class="relative w-[12rem] md:w-[50vw] lg:w-[85vw] xl:w-[50vw] h-[80px] lg:h-[100px] xl:h-[100px] border-4 border-yellow-500 rounded-full shadow-lg bg-gradient-to-b from-purple-900 to-indigo-700">
+                        <div class="absolute inset-0 flex justify-center items-center rounded-full"
+                            id="optionAcontainer">
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA1">A. 4</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA2">A. Green</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA3">A. Square</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA4">A. Cat</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA5">A. Berlin</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xll cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA6">A. 5</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA7">A. Mars</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA8">A. Apple</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA9">A. Pacific Ocean</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionA10">A. Baseball</span>
+                            <span
+                                class="text-white font-bold text-xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="faqA">A. Charles Dickens</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="option2nddiv">
+                <div
+                    class="flex justify-center items-center h-0 absolute top-[31rem] lg:top-[45rem] xl:top-[33rem] left-[12rem] md:left-[50vw] lg:left-[85%] xl:left-[50%]">
+                    <div
+                        class="relative w-[12rem] md:w-[50vw] lg:w-[85vw] xl:w-[50vw] h-[80px] lg:h-[100px] xl:h-[100px] border-4 border-yellow-500 rounded-full shadow-lg bg-gradient-to-b from-purple-900 to-indigo-700">
+                        <div class="absolute inset-0 flex justify-center items-center rounded-full"
+                            id="optionBcontainer">
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB1">B. 3</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB2">B. Blue</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB3">B. Rectangle</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB4">B. Fish</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB5">B. Paris</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB6">B. 6</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB7">B. Venus</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB8">B. Banana</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB9">B. Indian Ocean</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionB10">B. Basketball</span>
+                            <span
+                                class="text-white font-bold text-xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="faqB"> &nbsp; &nbsp; B. William Shakespeare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="option3rddiv">
+                <div class="flex justify-center items-center h-0 absolute top-[36.5rem] lg:top-[53rem] xl:top-[40rem]">
+                    <div
+                        class="relative w-[12rem] md:w-[50vw] lg:w-[85vw] xl:w-[50vw] h-[80px] lg:h-[100px] xl:h-[100px] border-4 border-yellow-500 rounded-full shadow-lg bg-gradient-to-b from-purple-900 to-indigo-700">
+                        <div class="absolute inset-0 flex justify-center items-center rounded-full"
+                            id="optionCcontainer">
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC1">C. 5</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC2">C. Red</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC3">C. Traingle</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC4">C. Bird</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC5">C. Madrid</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC6">C. 8</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC7">C. Jupiter</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC8">C. Strawberry</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC9">C. Arctic Ocean</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionC10">C. Soccer</span>
+                            <span
+                                class="text-white font-bold text-xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="faqC">C. Jane Austen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="option4thdiv">
+                <div
+                    class="flex justify-center items-center h-0 absolute top-[36.5rem] lg:top-[53rem] xl:top-[40rem] left-[12rem] md:left-[50vw] lg:left-[85%] xl:left-[50%]">
+                    <div
+                        class="relative w-[12rem] md:w-[50vw] lg:w-[85vw] xl:w-[50vw] h-[80px] lg:h-[100px] xl:h-[100px] border-4 border-yellow-500 rounded-full shadow-lg bg-gradient-to-b from-purple-900 to-indigo-700">
+                        <div class="absolute inset-0 flex justify-center items-center rounded-full"
+                            id="optionDcontainer">
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD1">D. 6</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD2">D. Yellow</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD3">D. Circle</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD4">D. Dog</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD5">D. Rome</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD6">D. 7</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD7">D. Saturn</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD8">D. Orange</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD9">D. Atlantic Ocean</span>
+                            <span
+                                class="text-white font-bold text-2xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="optionD10">D. American Football</span>
+
+                            <span
+                                class="text-white font-bold text-xl lg:text-3xl xl:text-3xl cursor-pointer hover:text-yellow-500 hidden"
+                                id="faqD">D. Mark Twain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------show options button-------------------------- -->
+        <button id="showOptionsBtn1"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md">Show
+            Options</button>
+        <button id="showOptionsBtn2"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn3"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn4"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn5"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn6"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn7"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn8"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn9"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+        <button id="showOptionsBtn10"
+            class="absolute left-[30%] md:left-[40vw] lg:left-[79vw] xl:left-[45%] top-[39rem] lg:top-[57rem] xl:top-[93%] bg-green-500 p-3 font-bold rounded-md hidden">Show
+            Options</button>
+    </div>
+
+    <!-- --------Correct Answer Box Images -->
+    <div id="correctAnswerBox1"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn1"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox2"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn2"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox3"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn3"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox4"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn4"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox5"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn5"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox6"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn6"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox7"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn7"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox8"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn8"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+    <div id="correctAnswerBox9"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Correct Answer</h1>
+            </div>
+            <button id="nextBtn9"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                NEXT
+            </button>
+        </div>
+    </div>
+
+    <!-- -----------Wrong Answer Box Images -->
+    <div id="wrongAnswerBox1"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn1"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox2"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn2"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox3"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn3"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox4"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn4"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox5"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn5"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox6"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn6"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox7"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn7"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox8"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn8"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox9"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn9"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+    <div id="wrongAnswerBox10"
+        class="z-20 w-80 lg:w-96 xl:w-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute h-52 lg:h-96 xl:h-96 top-40 left-5 md:left-[35vw] lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Wrong Answer</h1>
+            </div>
+            <button id="retryBtn10"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+
+
+    <!-- -----------7 crore Firework Animation-------- -->
+    <div class="relative flex items-center justify-center hidden top-[55%]" id="7croreText">
+        <div id="text-container"
+            class="absolute top-[40%] text-7xl lg:text-8xl xl:text-9xl text-green-600 font-bold animate-zoomInOut">
+            7 Crore
+        </div>
+    </div>
+    <canvas id="Canvas" class="hidden">
+    </canvas>
+
+    <!-- -----------------Timer Ended Boxes -->
+    <div id="timesup"
+        class="z-20 w-80 lg:w-96 xl:w-96 h-52 lg:h-96 xl:h-96 bg-purple-700 custom-shape shadow-lg rounded-3xl border-4 border-yellow-500 absolute top-40 left-5 lg:left-[70%] xl:left-[40%] hidden">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-[25%]">
+                <h1 class=" text-4xl text-yellow-300 font-bold">Time's Up</h1>
+            </div>
+            <button id="retryBtn1"
+                class="size-20 lg:mt-[25%] xl:mt-[25%] bottom-4 bg-blue-700 text-yellow-300 py-1 px-4 text-lg font-bold rounded">
+                RETRY
+            </button>
+        </div>
+    </div>
+
+    <!-- -----------all audio files------------------ -->
+    <audio src="Assets/starting audio.mp3" id="progress-audio"></audio>
+    <audio src="Assets/30 second tic tic kbc clock(MP3_160K).mp3" id="ticticAudio"></audio>
+    <audio src="Assets/1stAnswerAudio.mp3" id="1kAnswerAudio"></audio>
+    <audio src="Assets/2k answer.mp3" id="2kAnswerAudio"></audio>
+    <audio src="Assets/40k question.mp3" id="40kQuestionAudio"></audio>
+    <audio src="Assets/40k answer.mp3" id="40kAnswerAudio"></audio>
+    <audio src="Assets/80k question.mp3" id="80kQuestionAudio"></audio>
+    <audio src="Assets/80k answer.mp3" id="80kAnswerAudio"></audio>
+    <audio src="Assets/3,20,000 question.mp3" id="3lakhQuestionAudio"></audio>
+    <audio src="Assets/3,20,000 answer.mp3" id="3lakhAnswerAudio"></audio>
+    <audio src="Assets/6,40,000 question.mp3" id="6lakhQuestionAudio"></audio>
+    <audio src="Assets/6,40,000 correct answer.mp3" id="6lakhAnswerAudio"></audio>
+    <audio src="Assets/12 lakh question.mp3" id="12lakhQuestionAudio"></audio>
+    <audio src="Assets/12 lakh correct answer.mp3" id="12lakhAnswerAudio"></audio>
+    <audio src="Assets/25 lakh question.mp3" id="25lakhQuestionAudio"></audio>
+    <audio src="Assets/25 lakh correcf answer.mp3" id="25lakhAnswerAudio"></audio>
+    <audio src="Assets/1crore Question.mp3" id="1croreQuestionAudio"></audio>
+    <audio src="Assets/1 crore answer.mp3" id="1croreAnswerAudio"></audio>
+    <audio src="Assets/7 crore answer.mp3" id="7croreAnswerAudio"></audio>
+    <audio src="Assets/wrong answer.mp3" id="wrongAnswerAudio"></audio>
+    <!-- -----------------------------------Javascript Logic Part Start's Here------------------------------ -->
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'vsm': '425px',
+                    'sm': '640px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'md': '768px',
+                    // => @media (min-width: 768px) { ... }
+
+                    'lg': '1024px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'xl': '1280px',
+                    // => @media (min-width: 1280px) { ... }
+
+                    '2xl': '1536px',
+                    // => @media (min-width: 1536px) { ... }
+                },
+                extend: {
+                    keyframes: {
+                        zoomInOut: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.2)' },
+                        },
+                    },
+                    animation: {
+                        zoomInOut: 'zoomInOut 2s ease-in-out infinite',
+                    },
+                },
+            },
+            plugins: [],
+        }
+        // ----------tic tic audio on 1st question logic--------------
+        window.onload = function () {
+            let a = 1;
+            document.getElementById("progress-audio").addEventListener("ended", function () {
+                document.getElementById("skipIntroBtn").click();
+            });
+            document.getElementById("startGameBtn").addEventListener("click", function () {
+                startIntroSoundAudio();
+                this.style.display = 'none';
+                document.getElementById("skipIntroBtn").style.display = 'block';
+            });
+            document.getElementById("skipIntroBtn").addEventListener("click", function () {
+                stopIntroSoundAudio();
+                this.style.display = 'none';
+                document.getElementById('firstDiv').style.display = 'none';
+                document.getElementById("gameStarts").style.display = 'block';
+            });
+            // --------------------------------Trial Phase Ended-----------------------------
+            // -----reload function used for wrong Answer Boxes
+            function reloadPage() {
+                location.reload();
+            }
+
+            // ticticAudio reference
+            const ticticAudio = document.getElementById('ticticAudio');
+
+            // Function to start audio
+            function startTicTicAudio() {
+                ticticAudio.play();
+            }
+
+            // Function to stop audio
+            function stopTicTicAudio() {
+                ticticAudio.pause();
+                ticticAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ----------------introduction audio start and stop function---------------
+            const introSound = document.getElementById('progress-audio');
+            function startIntroSoundAudio() {
+                introSound.play();
+            }
+
+            function stopIntroSoundAudio() {
+                introSound.pause();
+            }
+            // ---------------------1st answer audio start and stop function----------------
+            const onekAnswerAudio = document.getElementById('1kAnswerAudio');
+            function startFirstAnswerAudio() {
+                onekAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopFirstAnswerAudio() {
+                onekAnswerAudio.pause();
+                onekAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------2nd answer audio start and stop function-----------------
+            const fivekAnswerAudio = document.getElementById('2kAnswerAudio');
+            function startSecondAnswerAudio() {
+                fivekAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopSecondAnswerAudio() {
+                fivekAnswerAudio.pause();
+                fivekAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------3rd question audio start and stop function-----------------
+            const fourtykQuestionAudio = document.getElementById('40kQuestionAudio');
+            function startThirdQuestionAudio() {
+                fourtykQuestionAudio.play();
+            }
+
+            // Function to stop audio
+            function stopThirdQuestionAudio() {
+                fourtykQuestionAudio.pause();
+                fourtykQuestionAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------3rd answer audio start and stop function-----------------
+            const fourtykAnswerAudio = document.getElementById('40kAnswerAudio');
+            function startThirdAnswerAudio() {
+                fourtykAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopThirdAnswerAudio() {
+                fourtykAnswerAudio.pause();
+                fourtykAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------4th question audio start and stop function-----------------
+            const eightykQuestionAudio = document.getElementById('80kQuestionAudio');
+            function startFourthQuestionAudio() {
+                eightykQuestionAudio.play();
+            }
+
+            // Function to stop audio
+            function stopFourthQuestionAudio() {
+                eightykQuestionAudio.pause();
+                eightykQuestionAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------4th answer audio start and stop function-----------------
+            const eightykAnswerAudio = document.getElementById('80kAnswerAudio');
+            function startFourthAnswerAudio() {
+                eightykAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopFourthAnswerAudio() {
+                eightykAnswerAudio.pause();
+                eightykAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------5th question audio start and stop function-----------------
+            const threeLakhQuestionAudio = document.getElementById('3lakhQuestionAudio');
+            function startFifthQuestionAudio() {
+                threeLakhQuestionAudio.play();
+            }
+
+            // Function to stop audio
+            function stopFifthQuestionAudio() {
+                threeLakhQuestionAudio.pause();
+                threeLakhQuestionAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------5th answer audio start and stop function-----------------
+            const threeLakhAnswerAudio = document.getElementById('3lakhAnswerAudio');
+            function startFifthAnswerAudio() {
+                threeLakhAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopFifthAnswerAudio() {
+                threeLakhAnswerAudio.pause();
+                threeLakhAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------6th question audio start and stop function-----------------
+            const sixLakhQuestionAudio = document.getElementById('6lakhQuestionAudio');
+            function startSixthQuestionAudio() {
+                sixLakhQuestionAudio.play();
+            }
+
+            // Function to stop audio
+            function stopSixthQuestionAudio() {
+                sixLakhQuestionAudio.pause();
+                sixLakhQuestionAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------6th answer audio start and stop function-----------------
+            const sixLakhAnswerAudio = document.getElementById('6lakhAnswerAudio');
+            function startSixthAnswerAudio() {
+                sixLakhAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopSixthAnswerAudio() {
+                sixLakhAnswerAudio.pause();
+                sixLakhAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------7th question audio start and stop function-----------------
+            const twelveLakhQuestionAudio = document.getElementById('12lakhQuestionAudio');
+            function startSeventhQuestionAudio() {
+                twelveLakhQuestionAudio.play();
+            }
+
+            // Function to stop audio
+            function stopSeventhQuestionAudio() {
+                twelveLakhQuestionAudio.pause();
+                twelveLakhQuestionAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------7th answer audio start and stop function-----------------
+            const twelveLakhAnswerAudio = document.getElementById('12lakhAnswerAudio');
+            function startSeventhAnswerAudio() {
+                twelveLakhAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopSeventhAnswerAudio() {
+                twelveLakhAnswerAudio.pause();
+                twelveLakhAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------8th question audio start and stop function-----------------
+            const twentyfiveLakhQuestionAudio = document.getElementById('25lakhQuestionAudio');
+            function startEightQuestionAudio() {
+                twentyfiveLakhQuestionAudio.play();
+            }
+
+            // Function to stop audio
+            function stopEightQuestionAudio() {
+                twentyfiveLakhQuestionAudio.pause();
+                twentyfiveLakhQuestionAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------8th answer audio start and stop function-----------------
+            const twentyfiveLakhAnswerAudio = document.getElementById('25lakhAnswerAudio');
+            function startEightAnswerAudio() {
+                twentyfiveLakhAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopEightAnswerAudio() {
+                twentyfiveLakhAnswerAudio.pause();
+                twentyfiveLakhAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------9th question audio start and stop function-----------------
+            const oneCroreQuestionAudio = document.getElementById('1croreQuestionAudio');
+            function startNinthQuestionAudio() {
+                oneCroreQuestionAudio.play();
+            }
+
+            // Function to stop audio
+            function stopNinthQuestionAudio() {
+                oneCroreQuestionAudio.pause();
+                oneCroreQuestionAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------9th answer audio start and stop function-----------------
+            const oneCroreAnswerAudio = document.getElementById('1croreAnswerAudio');
+            function startNinthAnswerAudio() {
+                oneCroreAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopNinthAnswerAudio() {
+                oneCroreAnswerAudio.pause();
+                oneCroreAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ---------------------10th answer audio start and stop function-----------------
+            const sevenCroreAnswerAudio = document.getElementById('7croreAnswerAudio');
+            function startTenthAnswerAudio() {
+                sevenCroreAnswerAudio.play();
+            }
+
+            // Function to stop audio
+            function stopTenthAnswerAudio() {
+                sevenCroreAnswerAudio.pause();
+                sevenCroreAnswerAudio.currentTime = 0; // Reset audio to the start
+            }
+            // ------------------wrong answer audio logic for all wrong options----------------
+            const wrongAnswerAudio = document.getElementById("wrongAnswerAudio");
+            function startWrongAnswerAudio() {
+                wrongAnswerAudio.play();
+            }
+
+            function stopWrongAnswerAudio() {
+                wrongAnswerAudio.pause();
+                wrongAnswerAudio.currentTime = 0;
+            }
+
+            //   -------------------------
+            // Get the elements by their IDs
+            const optionA1 = document.getElementById('optionA1');
+            const correctAnswerBox1 = document.getElementById('correctAnswerBox1');
+            const question1 = document.getElementById('question1');
+            const question2 = document.getElementById('question2');
+            const question3 = document.getElementById('question3');
+            const question4 = document.getElementById('question4');
+            const question5 = document.getElementById('question5');
+            const question6 = document.getElementById('question6');
+            const question7 = document.getElementById('question7');
+            const question8 = document.getElementById('question8');
+            const question9 = document.getElementById('question9');
+            const question10 = document.getElementById('question10');
+            const optionB1 = document.getElementById('optionB1');
+            const optionC1 = document.getElementById('optionC1');
+            const optionD1 = document.getElementById('optionD1');
+            const optionA2 = document.getElementById('optionA2');
+            const optionB2 = document.getElementById('optionB2');
+            const optionC2 = document.getElementById('optionC2');
+            const optionD2 = document.getElementById('optionD2');
+            const optionA3 = document.getElementById('optionA3');
+            const optionB3 = document.getElementById('optionB3');
+            const optionC3 = document.getElementById('optionC3');
+            const optionD3 = document.getElementById('optionD3');
+            const optionA4 = document.getElementById('optionA4');
+            const optionB4 = document.getElementById('optionB4');
+            const optionC4 = document.getElementById('optionC4');
+            const optionD4 = document.getElementById('optionD4');
+            const optionA5 = document.getElementById('optionA5');
+            const optionB5 = document.getElementById('optionB5');
+            const optionC5 = document.getElementById('optionC5');
+            const optionD5 = document.getElementById('optionD5');
+            const optionA6 = document.getElementById('optionA6');
+            const optionB6 = document.getElementById('optionB6');
+            const optionC6 = document.getElementById('optionC6');
+            const optionD6 = document.getElementById('optionD6');
+            const optionA7 = document.getElementById('optionA7');
+            const optionB7 = document.getElementById('optionB7');
+            const optionC7 = document.getElementById('optionC7');
+            const optionD7 = document.getElementById('optionD7');
+            const optionA8 = document.getElementById('optionA8');
+            const optionB8 = document.getElementById('optionB8');
+            const optionC8 = document.getElementById('optionC8');
+            const optionD8 = document.getElementById('optionD8');
+            const optionA9 = document.getElementById('optionA9');
+            const optionB9 = document.getElementById('optionB9');
+            const optionC9 = document.getElementById('optionC9');
+            const optionD9 = document.getElementById('optionD9');
+            const optionA10 = document.getElementById('optionA10');
+            const optionB10 = document.getElementById('optionB10');
+            const optionC10 = document.getElementById('optionC10');
+            const optionD10 = document.getElementById('optionD10');
+            const optionAcontainer = document.getElementById(`optionAcontainer`);
+            const optionBcontainer = document.getElementById(`optionBcontainer`);
+            const optionCcontainer = document.getElementById(`optionCcontainer`);
+            const optionDcontainer = document.getElementById(`optionDcontainer`);
+            const nextBtn1 = document.getElementById(`nextBtn1`);
+            const nextBtn2 = document.getElementById(`nextBtn2`);
+            const nextBtn3 = document.getElementById(`nextBtn3`);
+            const nextBtn4 = document.getElementById(`nextBtn4`);
+            const nextBtn5 = document.getElementById(`nextBtn5`);
+            const nextBtn6 = document.getElementById(`nextBtn6`);
+            const nextBtn7 = document.getElementById(`nextBtn7`);
+            const nextBtn8 = document.getElementById(`nextBtn8`);
+            const nextBtn9 = document.getElementById(`nextBtn9`);
+
+            // Add click event listener to the optionA1
+            optionA1.addEventListener('click', function () {
+                a = 2;
+                console.log("a = " + a);
+                optionAcontainer.style.backgroundColor = "green";
+                stopTicTicAudio();
+                startFirstAnswerAudio();
+                // jab correctAnswerBox visible ho tab options par click nahi hona chahiye
+                optionA1.style.pointerEvents = "none";
+                optionB1.style.pointerEvents = "none";
+                optionC1.style.pointerEvents = "none";
+                optionD1.style.pointerEvents = "none";
+                document.getElementById("Q1-50-50").style.pointerEvents = "none";
+                document.getElementById("Q1-flip-a-question").style.pointerEvents = "none";
+
+
+                // Show the correctAnswerBox
+                // correctAnswerBox1.classList.remove('hidden');
+                correctAnswerBox1.style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+
+            // Add click event listener to the correctAnswerBox1
+            nextBtn1.addEventListener('click', function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+                stopFirstAnswerAudio();
+                // Hide the elements
+                correctAnswerBox1.style.display = 'none';
+                question1.classList.add("hidden");
+                optionA1.style.display = 'none';
+                optionB1.style.display = 'none';
+                optionC1.style.display = 'none';
+                optionD1.style.display = 'none';
+
+                // Show the elements
+                question2.style.display = 'block';
+
+                //color effect on question list
+                document.getElementById("1k").classList.remove("bg-yellow-500");
+                document.getElementById("2k").classList.add("bg-yellow-500");
+
+            });
+
+            // ------2nd Questin ke answer par Correct Answer Box appear krne ka logic----------------
+            // Get the elements by their IDs
+            const correctAnswerBox2 = document.getElementById('correctAnswerBox2');
+
+            // Add click event listener to optionB2
+            optionB2.addEventListener('click', function () {
+                a = 3;
+                document.getElementById("optionBcontainer").style.backgroundColor = "green";
+
+                stopTicTicAudio();
+                startSecondAnswerAudio();
+                //correctAnswerBox ke visible hone pe options par click nahi hona chahiye
+                optionA2.style.pointerEvents = "none";
+                optionB2.style.pointerEvents = "none";
+                optionC2.style.pointerEvents = "none";
+                optionD2.style.pointerEvents = "none";
+                document.getElementById("Q2-50-50").style.pointerEvents = "none";
+                document.getElementById("Q2-flip-a-question").style.pointerEvents = "none";
+
+                // Show the correctAnswerBox2
+                correctAnswerBox2.style.display = 'block';
+
+                //stop the timer
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ---------2nd Correct Answer Box par click krne se 3rd question me aane wala logic--------
+
+            // Add click event listener to correctAnswerBox2
+            nextBtn2.addEventListener('click', function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                startThirdQuestionAudio();
+                // Hide elements for question 2
+                correctAnswerBox2.style.display = 'none';
+                question2.style.display = 'none';
+                optionA2.style.display = 'none';
+                optionB2.style.display = 'none';
+                optionC2.style.display = 'none';
+                optionD2.style.display = 'none';
+
+                document.getElementById("faq").style.display = 'none';
+                document.getElementById("faqA").style.display = 'none';
+                document.getElementById("faqB").style.display = 'none';
+                document.getElementById("faqC").style.display = 'none';
+                document.getElementById("faqD").style.display = `none`;
+
+                // Show elements for question 3
+                question3.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("2k").classList.remove("bg-yellow-500");
+                document.getElementById("40k").classList.add("bg-yellow-500");
+            });
+            // ---------------Congrats video play krne ki logic------------
+            // Get the element by its ID
+            const congratsVideo = document.getElementById('congrats');
+
+            // Add click event listener to optionC3
+            optionC3.addEventListener('click', function () {
+                a = 4;
+                optionCcontainer.style.backgroundColor = "green";
+
+                stopTicTicAudio();
+                startThirdAnswerAudio();
+                optionA3.style.pointerEvents = "none";
+                optionB3.style.pointerEvents = "none";
+                optionC3.style.pointerEvents = "none";
+                optionD3.style.pointerEvents = "none";
+                document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("correctAnswerBox3").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            optionC4.addEventListener('click', function () {
+                optionCcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startThirdAnswerAudio();
+                optionA4.style.pointerEvents = "none";
+                optionB4.style.pointerEvents = "none";
+                optionC4.style.pointerEvents = "none";
+                optionD4.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("wrongAnswerBox4").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            optionC5.addEventListener('click', function () {
+                optionCcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+
+                optionA5.style.pointerEvents = "none";
+                optionB5.style.pointerEvents = "none";
+                optionC5.style.pointerEvents = "none";
+                optionD5.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("wrongAnswerBox5").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            optionC6.addEventListener('click', function () {
+                optionCcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+
+                optionA6.style.pointerEvents = "none";
+                optionB6.style.pointerEvents = "none";
+                optionC6.style.pointerEvents = "none";
+                optionD6.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("wrongAnswerBox6").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            optionC7.addEventListener('click', function () {
+                optionCcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+
+                optionA7.style.pointerEvents = "none";
+                optionB7.style.pointerEvents = "none";
+                optionC7.style.pointerEvents = "none";
+                optionD7.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("wrongAnswerBox7").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            optionC8.addEventListener('click', function () {
+                optionCcontainer.style.backgroundColor = 'green';
+                stopTicTicAudio();
+                startEightAnswerAudio();
+
+                optionA8.style.pointerEvents = "none";
+                optionB8.style.pointerEvents = "none";
+                optionC8.style.pointerEvents = "none";
+                optionD8.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("correctAnswerBox8").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            optionC9.addEventListener('click', function () {
+                optionCcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+
+                optionA9.style.pointerEvents = "none";
+                optionB9.style.pointerEvents = "none";
+                optionC9.style.pointerEvents = "none";
+                optionD9.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("wrongAnswerBox9").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            optionC10.addEventListener('click', function () {
+                optionCcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+
+                optionA10.style.pointerEvents = "none";
+                optionB10.style.pointerEvents = "none";
+                optionC10.style.pointerEvents = "none";
+                optionD10.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                document.getElementById("wrongAnswerBox10").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ----------"Show Options" button ka logic---------
+            document.getElementById("showOptionsBtn1").addEventListener("click", function () {
+                // Set display property of option elements to 'block' to make them visible
+                document.getElementById("optionA1").style.display = "block";
+                document.getElementById("optionB1").style.display = "block";
+                document.getElementById("optionC1").style.display = "block";
+                document.getElementById("optionD1").style.display = "block";
+                document.getElementById("q1lifelines").classList.remove("hidden");
+
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+
+                startTicTicAudio();
+            });
+
+            document.getElementById("nextBtn1").addEventListener("click", function () {
+                this.style.display = "none";
+                document.getElementById("faq").style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById("faqB").style.display = "none";
+                document.getElementById("faqC").style.display = "none";
+                document.getElementById("faqD").style.display = "none";
+                document.getElementById("q1lifelines").style.display = "none";
+                // Set display property of showOptionsBtn2 to 'block' to make it visible
+                document.getElementById("showOptionsBtn2").style.display = "block";
+                question2.style.display = "block";
+
+            });
+            // ---------------
+            document.getElementById("correctAnswerBox2").addEventListener("click", function () {
+                stopSecondAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn3").style.display = "block";
+                document.getElementById("q2lifelines").style.display = "none";
+            });
+            // ---------------
+            document.getElementById("correctAnswerBox3").addEventListener("click", function () {
+                // stopSecondAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn4").style.display = "block";
+                document.getElementById("q3lifelines").style.display = "none";
+            });
+            // ---------------
+            document.getElementById("correctAnswerBox4").addEventListener("click", function () {
+                // stopSecondAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn5").style.display = "block";
+                document.getElementById("q4lifelines").style.display = "none";
+            });
+            // ---------------
+            document.getElementById("correctAnswerBox5").addEventListener("click", function () {
+                // stopSecondAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn6").style.display = "block";
+                document.getElementById("q5lifelines").style.display = "none";
+            });
+            // ---------------
+            document.getElementById("correctAnswerBox6").addEventListener("click", function () {
+                // stopSecondAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn7").style.display = "block";
+                document.getElementById("q6lifelines").style.display = "none";
+            });
+            // ---------------
+            document.getElementById("correctAnswerBox7").addEventListener("click", function () {
+                // stopSecondAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn8").style.display = "block";
+                document.getElementById("q7lifelines").style.display = "none";
+            });
+            // ---------------
+            document.getElementById("correctAnswerBox8").addEventListener("click", function () {
+                // stopSecondAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn9").style.display = "block";
+                document.getElementById("q8lifelines").style.display = "none";
+            });
+            document.getElementById("showOptionsBtn3").addEventListener("click", function () {
+                stopThirdQuestionAudio();
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA3.style.display = "block";
+                optionB3.style.display = "block";
+                optionC3.style.display = "block";
+                optionD3.style.display = "block";
+                // Hide the showOptionsBtn1
+                document.getElementById("q3lifelines").classList.remove("hidden");
+                this.style.display = "none";
+            });
+            // ---------------
+            document.getElementById("showOptionsBtn4").addEventListener("click", function () {
+                stopFourthQuestionAudio();
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA4.style.display = "block";
+                optionB4.style.display = "block";
+                optionC4.style.display = "block";
+                optionD4.style.display = 'block';
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+                document.getElementById("q4lifelines").classList.remove("hidden");
+            });
+            // ---------------
+            document.getElementById("showOptionsBtn5").addEventListener("click", function () {
+                stopFifthQuestionAudio();
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA5.style.display = "block";
+                optionB5.style.display = "block";
+                optionC5.style.display = "block";
+                optionD5.style.display = "block";
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+                document.getElementById("q5lifelines").classList.remove("hidden");
+            });
+            // ---------------
+            document.getElementById("showOptionsBtn6").addEventListener("click", function () {
+                stopSixthQuestionAudio();
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA6.style.display = "block";
+                optionB6.style.display = "block";
+                optionC6.style.display = "block";
+                optionD6.style.display = "block";
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+                document.getElementById("q6lifelines").classList.remove("hidden");
+            });
+            // ---------------
+            document.getElementById("showOptionsBtn7").addEventListener("click", function () {
+                stopSeventhQuestionAudio();
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA7.style.display = "block";
+                optionB7.style.display = "block";
+                optionC7.style.display = "block";
+                optionD7.style.display = "block";
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+                document.getElementById("q7lifelines").classList.remove("hidden");
+            });
+            // ---------------
+            document.getElementById("showOptionsBtn8").addEventListener("click", function () {
+                stopEightQuestionAudio();
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA8.style.display = "block";
+                optionB8.style.display = "block";
+                optionC8.style.display = "block";
+                optionD8.style.display = "block";
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+                document.getElementById("q8lifelines").classList.remove("hidden");
+            });
+            // ---------------
+            document.getElementById("showOptionsBtn9").addEventListener("click", function () {
+                stopNinthQuestionAudio();
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA9.style.display = "block";
+                optionB9.style.display = "block";
+                optionC9.style.display = "block";
+                optionD9.style.display = "block";
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+            });
+            // ---------------
+            document.getElementById("showOptionsBtn10").addEventListener("click", function () {
+                startTicTicAudio();
+                // Set display property of OptionA3, OptionB3, OptionC3, OptionD3 variables to 'block' to make them visible
+                optionA10.style.display = "block";
+                optionB10.style.display = "block";
+                optionC10.style.display = "block";
+                optionD10.style.display = "block";
+                // Hide the showOptionsBtn1
+                this.style.display = "none";
+            });
+            // ------ khada hu aaj bhi wahi lagi teri hi aas hai, kaisi hai ye bebasi kaisi dil ki pyas hai-----------
+            nextBtn3.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                startFourthQuestionAudio();
+                stopThirdAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn4").style.display = "block";
+                // document.getElementById("q3lifelines").style.display = "none";
+
+                // Hide elements for question 3
+                document.getElementById('correctAnswerBox3').style.display = 'none';
+                question3.style.display = 'none';
+                optionA3.style.display = 'none';
+                optionB3.style.display = 'none';
+                optionC3.style.display = 'none';
+                optionD3.style.display = 'none';
+
+                document.getElementById("faq").style.display = 'none';
+                document.getElementById("faqA").style.display = 'none';
+                document.getElementById("faqB").style.display = 'none';
+                document.getElementById("faqC").style.display = 'none';
+                document.getElementById("faqD").style.display = `none`;
+
+                // Show elements for question 4
+                question4.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("40k").classList.remove("bg-yellow-500");
+                document.getElementById("80k").classList.add("bg-yellow-500");
+            });
+            // ---------------
+            nextBtn4.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                stopFourthAnswerAudio();
+                startFifthQuestionAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn5").style.display = "block";
+                // document.getElementById("q3lifelines").style.display = "none";
+
+                // Hide elements for question 4
+                document.getElementById('correctAnswerBox4').style.display = 'none';
+                question4.style.display = 'none';
+                optionA4.style.display = 'none';
+                optionB4.style.display = 'none';
+                optionC4.style.display = 'none';
+                optionD4.style.display = 'none';
+
+                document.getElementById("faq").style.display = 'none';
+                document.getElementById("faqA").style.display = 'none';
+                document.getElementById("faqB").style.display = 'none';
+                document.getElementById("faqC").style.display = 'none';
+                document.getElementById("faqD").style.display = `none`;
+
+                // Show elements for question 4
+                question5.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("80k").classList.remove("bg-yellow-500");
+                document.getElementById("3l").classList.add("bg-yellow-500");
+            });
+            //----------------
+            nextBtn5.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                stopFifthAnswerAudio();
+                startSixthQuestionAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn6").style.display = "block";
+                // document.getElementById("q3lifelines").style.display = "none";
+
+                // Hide elements for question 5
+                document.getElementById('correctAnswerBox5').style.display = 'none';
+                question5.style.display = 'none';
+                optionA5.style.display = 'none';
+                optionB5.style.display = 'none';
+                optionC5.style.display = 'none';
+                optionD5.style.display = 'none';
+
+                document.getElementById("faq").style.display = 'none';
+                document.getElementById("faqA").style.display = 'none';
+                document.getElementById("faqB").style.display = 'none';
+                document.getElementById("faqC").style.display = 'none';
+                document.getElementById("faqD").style.display = `none`;
+
+                // Show elements for question 5
+                question6.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("3l").classList.remove("bg-yellow-500");
+                document.getElementById("6l").classList.add("bg-yellow-500");
+            });
+            //----------------
+            nextBtn6.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                stopSixthAnswerAudio();
+                startSeventhQuestionAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn7").style.display = "block";
+                // document.getElementById("q3lifelines").style.display = "none";
+
+                // Hide elements for question 5
+                document.getElementById('correctAnswerBox6').style.display = 'none';
+                question6.style.display = 'none';
+                optionA6.style.display = 'none';
+                optionB6.style.display = 'none';
+                optionC6.style.display = 'none';
+                optionD6.style.display = 'none';
+
+                document.getElementById("faq").style.display = 'none';
+                document.getElementById("faqA").style.display = 'none';
+                document.getElementById("faqB").style.display = 'none';
+                document.getElementById("faqC").style.display = 'none';
+                document.getElementById("faqD").style.display = `none`;
+
+                // Show elements for question 5
+                question7.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("6l").classList.remove("bg-yellow-500");
+                document.getElementById("12l").classList.add("bg-yellow-500");
+            });
+            //----------------
+            nextBtn7.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                stopSeventhAnswerAudio();
+                startEightQuestionAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn8").style.display = "block";
+                // document.getElementById("q3lifelines").style.display = "none";
+
+                // Hide elements for question 5
+                document.getElementById('correctAnswerBox7').style.display = 'none';
+                question7.style.display = 'none';
+                optionA7.style.display = 'none';
+                optionB7.style.display = 'none';
+                optionC7.style.display = 'none';
+                optionD7.style.display = 'none';
+
+                document.getElementById("faq").style.display = 'none';
+                document.getElementById("faqA").style.display = 'none';
+                document.getElementById("faqB").style.display = 'none';
+                document.getElementById("faqC").style.display = 'none';
+                document.getElementById("faqD").style.display = `none`;
+
+                // Show elements for question 5
+                question8.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("12l").classList.remove("bg-yellow-500");
+                document.getElementById("25l").classList.add("bg-yellow-500");
+            });
+            //----------------
+            nextBtn8.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                stopEightAnswerAudio();
+                startNinthQuestionAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn9").style.display = "block";
+                // document.getElementById("q3lifelines").style.display = "none";
+
+                // Hide elements for question 5
+                document.getElementById('correctAnswerBox8').style.display = 'none';
+                question8.style.display = 'none';
+                optionA8.style.display = 'none';
+                optionB8.style.display = 'none';
+                optionC8.style.display = 'none';
+                optionD8.style.display = 'none';
+
+                document.getElementById("faq").style.display = 'none';
+                document.getElementById("faqA").style.display = 'none';
+                document.getElementById("faqB").style.display = 'none';
+                document.getElementById("faqC").style.display = 'none';
+                document.getElementById("faqD").style.display = `none`;
+
+                // Show elements for question 5
+                question9.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("25l").classList.remove("bg-yellow-500");
+                document.getElementById("1c").classList.add("bg-yellow-500");
+            });
+            //----------------
+            nextBtn9.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "";
+                optionBcontainer.style.backgroundColor = "";
+                optionCcontainer.style.backgroundColor = "";
+                optionDcontainer.style.backgroundColor = "";
+
+                stopNinthAnswerAudio();
+                // Set display property of showOptionsBtn3 to 'block' to make it visible
+                document.getElementById("showOptionsBtn10").style.display = "block";
+                // document.getElementById("q3lifelines").style.display = "none";
+
+                // Hide elements for question 5
+                document.getElementById('correctAnswerBox9').style.display = 'none';
+                question9.style.display = 'none';
+                optionA9.style.display = 'none';
+                optionB9.style.display = 'none';
+                optionC9.style.display = 'none';
+                optionD9.style.display = 'none';
+
+                // Show elements for question 5
+                question10.style.display = 'block';
+
+                //color effects for current question
+                document.getElementById("1c").classList.remove("bg-yellow-500");
+                document.getElementById("7c").classList.add("bg-yellow-500");
+            });
+
+            // --------Wrong Answer Box Logic
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionB1.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+
+                //correctAnswerBox ke visible hone pe options par click nahi hona chahiye
+                optionA1.style.pointerEvents = "none";
+                optionB1.style.pointerEvents = "none";
+                optionC1.style.pointerEvents = "none";
+                optionD1.style.pointerEvents = "none";
+                document.getElementById("Q1-50-50").style.pointerEvents = "none";
+                document.getElementById("Q1-flip-a-question").style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox1").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+
+            optionC1.addEventListener("click", function () {
+                optionCcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+
+                //correctAnswerBox1 ke visible hone pe options par click nahi hona chahiye
+                optionA1.style.pointerEvents = "none";
+                optionB1.style.pointerEvents = "none";
+                optionC1.style.pointerEvents = "none";
+                optionD1.style.pointerEvents = "none";
+                document.getElementById("Q1-50-50").style.pointerEvents = "none";
+                document.getElementById("Q1-flip-a-question").style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox1").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+
+            optionD1.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+
+                //correctAnswerBox1 ke visible hone pe options par click nahi hona chahiye
+                optionA1.style.pointerEvents = "none";
+                optionB1.style.pointerEvents = "none";
+                optionC1.style.pointerEvents = "none";
+                optionD1.style.pointerEvents = "none";
+                document.getElementById("Q1-50-50").style.pointerEvents = "none";
+                document.getElementById("Q1-flip-a-question").style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox1").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ----------
+            // Yeh event listeners optionA2, optionC2, aur optionD2 par lagaye ja rahe hain
+            optionA2.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                //correctAnswerBox ke visible hone pe options par click nahi hona chahiye
+                optionA2.style.pointerEvents = "none";
+                optionB2.style.pointerEvents = "none";
+                optionC2.style.pointerEvents = "none";
+                optionD2.style.pointerEvents = "none";
+                document.getElementById("Q2-50-50").style.pointerEvents = "none";
+                document.getElementById("Q2-flip-a-question").style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox2").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+
+            optionC2.addEventListener("click", function () {
+                optionCcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                //correctAnswerBox ke visible hone pe options par click nahi hona chahiye
+                optionA2.style.pointerEvents = "none";
+                optionB2.style.pointerEvents = "none";
+                optionC2.style.pointerEvents = "none";
+                optionD2.style.pointerEvents = "none";
+                document.getElementById("Q2-50-50").style.pointerEvents = "none";
+                document.getElementById("Q2-flip-a-question").style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox2").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+
+            optionD2.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                //correctAnswerBox ke visible hone pe options par click nahi hona chahiye
+                optionA2.style.pointerEvents = "none";
+                optionB2.style.pointerEvents = "none";
+                optionC2.style.pointerEvents = "none";
+                optionD2.style.pointerEvents = "none";
+                document.getElementById("Q2-50-50").style.pointerEvents = "none";
+                document.getElementById("Q2-flip-a-question").style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox2").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA3.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA3.style.pointerEvents = "none";
+                optionB3.style.pointerEvents = "none";
+                optionC3.style.pointerEvents = "none";
+                optionD3.style.pointerEvents = "none";
+                document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox3").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA4.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA4.style.pointerEvents = "none";
+                optionB4.style.pointerEvents = "none";
+                optionC4.style.pointerEvents = "none";
+                optionD4.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox4").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA5.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA5.style.pointerEvents = "none";
+                optionB5.style.pointerEvents = "none";
+                optionC5.style.pointerEvents = "none";
+                optionD5.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox5").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA6.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA6.style.pointerEvents = "none";
+                optionB6.style.pointerEvents = "none";
+                optionC6.style.pointerEvents = "none";
+                optionD6.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox6").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA7.addEventListener("click", function () {
+                a = 8;
+                optionAcontainer.style.backgroundColor = 'green';
+                stopTicTicAudio();
+                startSeventhAnswerAudio();
+
+                optionA7.style.pointerEvents = "none";
+                optionB7.style.pointerEvents = "none";
+                optionC7.style.pointerEvents = "none";
+                optionD7.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("correctAnswerBox7").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA8.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA8.style.pointerEvents = "none";
+                optionB8.style.pointerEvents = "none";
+                optionC8.style.pointerEvents = "none";
+                optionD8.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox8").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA9.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = 'green';
+                stopTicTicAudio();
+                startNinthAnswerAudio();
+
+                optionA9.style.pointerEvents = "none";
+                optionB9.style.pointerEvents = "none";
+                optionC9.style.pointerEvents = "none";
+                optionD9.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("correctAnswerBox9").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------------
+            // Yeh event listeners optionB1, optionC1, aur optionD1 par lagaye ja rahe hain
+            optionA10.addEventListener("click", function () {
+                optionAcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA10.style.pointerEvents = "none";
+                optionB10.style.pointerEvents = "none";
+                optionC10.style.pointerEvents = "none";
+                optionD10.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox10").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+
+            // -------OptionB3 Logic------------
+            optionB3.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA3.style.pointerEvents = "none";
+                optionB3.style.pointerEvents = "none";
+                optionC3.style.pointerEvents = "none";
+                optionD3.style.pointerEvents = "none";
+                document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox3").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ------------
+            optionB4.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA4.style.pointerEvents = "none";
+                optionB4.style.pointerEvents = "none";
+                optionC4.style.pointerEvents = "none";
+                optionD4.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox4").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ------------
+            optionB5.addEventListener("click", function () {
+                a = 6;
+                optionBcontainer.style.backgroundColor = 'green';
+                startFifthAnswerAudio();
+                stopTicTicAudio();
+
+                optionA5.style.pointerEvents = "none";
+                optionB5.style.pointerEvents = "none";
+                optionC5.style.pointerEvents = "none";
+                optionD5.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("correctAnswerBox5").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ------------
+            optionB6.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA6.style.pointerEvents = "none";
+                optionB6.style.pointerEvents = "none";
+                optionC6.style.pointerEvents = "none";
+                optionD6.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox6").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ------------
+            optionB7.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA7.style.pointerEvents = "none";
+                optionB7.style.pointerEvents = "none";
+                optionC7.style.pointerEvents = "none";
+                optionD7.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox7").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ------------
+            optionB8.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA8.style.pointerEvents = "none";
+                optionB8.style.pointerEvents = "none";
+                optionC8.style.pointerEvents = "none";
+                optionD8.style.pointerEvents = "none";
+                // document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox8").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ------------
+            optionB9.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA9.style.pointerEvents = "none";
+                optionB9.style.pointerEvents = "none";
+                optionC9.style.pointerEvents = "none";
+                optionD9.style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox9").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // ------------
+            optionB10.addEventListener("click", function () {
+                optionBcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA10.style.pointerEvents = "none";
+                optionB10.style.pointerEvents = "none";
+                optionC10.style.pointerEvents = "none";
+                optionD10.style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox10").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -------OptionD3 Logic------------
+            optionD3.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = "red";
+
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA3.style.pointerEvents = "none";
+                optionB3.style.pointerEvents = "none";
+                optionC3.style.pointerEvents = "none";
+                optionD3.style.pointerEvents = "none";
+                document.getElementById("Q3-50-50").style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox3").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -----------
+            optionD4.addEventListener("click", function () {
+                a = 5;
+                optionDcontainer.style.backgroundColor = 'green';
+                stopTicTicAudio();
+                startFourthAnswerAudio();
+                if (optionA4) optionA4.style.pointerEvents = "none";
+                if (optionB4) optionB4.style.pointerEvents = "none";
+                if (optionC4) optionC4.style.pointerEvents = "none";
+                if (optionD4) optionD4.style.pointerEvents = "none";
+
+                if (correctAnswerBox4) correctAnswerBox4.style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+
+            // -----------
+            optionD5.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA5.style.pointerEvents = "none";
+                optionB5.style.pointerEvents = "none";
+                optionC5.style.pointerEvents = "none";
+                optionD5.style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox5").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -----------
+            optionD6.addEventListener("click", function () {
+                a = 7;
+                optionDcontainer.style.backgroundColor = 'green';
+                startSixthAnswerAudio();
+                stopTicTicAudio();
+
+                optionA6.style.pointerEvents = "none";
+                optionB6.style.pointerEvents = "none";
+                optionC6.style.pointerEvents = "none";
+                optionD6.style.pointerEvents = "none";
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("correctAnswerBox6").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -----------
+            optionD7.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA7.style.pointerEvents = "none";
+                optionB7.style.pointerEvents = "none";
+                optionC7.style.pointerEvents = "none";
+                optionD7.style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox7").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -----------
+            optionD8.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA8.style.pointerEvents = "none";
+                optionB8.style.pointerEvents = "none";
+                optionC8.style.pointerEvents = "none";
+                optionD8.style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox8").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -----------
+            optionD9.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = 'red';
+                stopTicTicAudio();
+                startWrongAnswerAudio();
+                optionA9.style.pointerEvents = "none";
+                optionB9.style.pointerEvents = "none";
+                optionC9.style.pointerEvents = "none";
+                optionD9.style.pointerEvents = "none";
+
+                // Set display property of wrongAnswerBox1 to 'block' to make it visible
+                document.getElementById("wrongAnswerBox9").style.display = "block";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+            });
+            // -----------
+            optionD10.addEventListener("click", function () {
+                optionDcontainer.style.backgroundColor = 'green';
+                stopTicTicAudio();
+                startTenthAnswerAudio();
+
+                document.getElementById("7croreText").classList.remove("hidden");
+                document.getElementById("Canvas").classList.remove("hidden");
+                document.getElementById("gameStarts").style.display = 'none';
+
+                optionA10.style.pointerEvents = "none";
+                optionB10.style.pointerEvents = "none";
+                optionC10.style.pointerEvents = "none";
+                optionD10.style.pointerEvents = "none";
+
+                //STOP THE TIMER
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+
+            });
+
+
+            // --------Wrong Answer Boxes logic starts--------------
+            document.getElementById("retryBtn1").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn2").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn3").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn4").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn5").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn6").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn7").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn8").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn9").addEventListener("click", reloadPage);
+            document.getElementById("retryBtn10").addEventListener("click", reloadPage);
+            // ---------Lifelines logic
+            // ---------------------------50-50 lifeline logic
+            // Track whether Q1-50-50 and Q2-50-50 have been clicked
+            let q15050Clicked = false;
+            let q25050Clicked = false;
+            let q35050Clicked = false;
+            let q45050Clicked = false;
+            let q55050Clicked = false;
+            let q65050Clicked = false;
+            let q75050Clicked = false;
+            let q85050Clicked = false;
+
+            // question 1's 50-50 lifeline logic
+            document.getElementById("Q1-50-50").addEventListener("click", function () {
+                q15050Clicked = true;
+                document.getElementById('optionB1').style.display = "none";
+                document.getElementById('optionC1').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            // question 2's 50-50 lifeline logic
+            document.getElementById("showOptionsBtn2").addEventListener("click", function () {
+                startTicTicAudio();
+                optionA2.style.display = "block";
+                optionB2.style.display = "block";
+                optionC2.style.display = "block";
+                optionD2.style.display = "block";
+                document.getElementById("q2lifelines").style.display = "block";
+                this.style.display = "none";
+                if (q15050Clicked) {
+                    document.getElementById("Q2-50-50").style.display = 'none';
+                } else {
+                    document.getElementById("Q2-50-50").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q2-50-50").addEventListener("click", function () {
+                q25050Clicked = true;
+                document.getElementById('optionA2').style.display = "none";
+                document.getElementById('optionD2').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            // question 3's 50-50 lifeline logic
+            document.getElementById("showOptionsBtn3").addEventListener("click", function () {
+                if (q15050Clicked || q25050Clicked) {
+                    document.getElementById("Q3-50-50").style.display = 'none';
+                } else {
+                    document.getElementById("Q3-50-50").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q3-50-50").addEventListener("click", function () {
+                q35050Clicked = true;
+                document.getElementById('optionA3').style.display = "none";
+                document.getElementById('optionD3').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            // question 4's 50-50 lifeline logic
+            document.getElementById("showOptionsBtn4").addEventListener("click", function () {
+                if (q15050Clicked || q25050Clicked || q35050Clicked) {
+                    document.getElementById("Q4-50-50").style.display = 'none';
+                } else {
+                    document.getElementById("Q4-50-50").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q4-50-50").addEventListener("click", function () {
+                q45050Clicked = true;
+                document.getElementById('optionB4').style.display = "none";
+                document.getElementById('optionC4').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            // question 5's 50-50 lifeline logic
+            document.getElementById("showOptionsBtn5").addEventListener("click", function () {
+                if (q15050Clicked || q25050Clicked || q35050Clicked || q45050Clicked) {
+                    document.getElementById("Q5-50-50").style.display = 'none';
+                } else {
+                    document.getElementById("Q5-50-50").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q5-50-50").addEventListener("click", function () {
+                q55050Clicked = true;
+                document.getElementById('optionA5').style.display = "none";
+                document.getElementById('optionC5').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            // question 6's 50-50 lifeline logic
+            document.getElementById("showOptionsBtn6").addEventListener("click", function () {
+                if (q15050Clicked || q25050Clicked || q35050Clicked || q45050Clicked || q55050Clicked) {
+                    document.getElementById("Q6-50-50").style.display = 'none';
+                } else {
+                    document.getElementById("Q6-50-50").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q6-50-50").addEventListener("click", function () {
+                q65050Clicked = true;
+                document.getElementById('optionB6').style.display = "none";
+                document.getElementById('optionC6').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            // question 7's 50-50 lifeline logic
+            document.getElementById("showOptionsBtn7").addEventListener("click", function () {
+                if (q15050Clicked || q25050Clicked || q35050Clicked || q45050Clicked || q55050Clicked || q65050Clicked) {
+                    document.getElementById("Q7-50-50").style.display = 'none';
+                } else {
+                    document.getElementById("Q7-50-50").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q7-50-50").addEventListener("click", function () {
+                q75050Clicked = true;
+                document.getElementById('optionB7').style.display = "none";
+                document.getElementById('optionC7').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            // question 8's 50-50 lifeline logic
+            document.getElementById("showOptionsBtn8").addEventListener("click", function () {
+                if (q15050Clicked || q25050Clicked || q35050Clicked || q45050Clicked || q55050Clicked || q65050Clicked || q75050Clicked) {
+                    document.getElementById("Q8-50-50").style.display = 'none';
+                } else {
+                    document.getElementById("Q8-50-50").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q8-50-50").addEventListener("click", function () {
+                q85050Clicked = true;
+                document.getElementById('optionB8').style.display = "none";
+                document.getElementById('optionD8').style.display = "none";
+                this.style.display = "none";
+                document.getElementById("faqA").style.display = "none";
+                document.getElementById('faqD').style.display = "none";
+            });
+
+            let q1faqClicked = false;
+            let q2faqClicked = false;
+            let q3faqClicked = false;
+            let q4faqClicked = false;
+            let q5faqClicked = false;
+            let q6faqClicked = false;
+            let q7faqClicked = false;
+            let q8faqClicked = false;
+
+            // Question 1's flip-a-question logic
+            document.getElementById("Q1-flip-a-question").addEventListener("click", function () {
+                q1faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question1').style.display = "none";
+                document.getElementById('optionA1').style.display = "none";
+                document.getElementById('optionB1').style.display = "none";
+                document.getElementById('optionC1').style.display = "none";
+                document.getElementById('optionD1').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+
+            // Question 2's flip-a-question logic
+            document.getElementById("showOptionsBtn2").addEventListener("click", function () {
+                if (q1faqClicked) {
+                    document.getElementById("Q2-flip-a-question").style.display = 'none';
+                } else {
+                    document.getElementById("Q2-flip-a-question").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q2-flip-a-question").addEventListener("click", function () {
+                q2faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question2').style.display = "none";
+                document.getElementById('optionA2').style.display = "none";
+                document.getElementById('optionB2').style.display = "none";
+                document.getElementById('optionC2').style.display = "none";
+                document.getElementById('optionD2').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+
+
+            // Question 3's flip-a-question logic
+            document.getElementById("showOptionsBtn3").addEventListener("click", function () {
+                if (q1faqClicked || q2faqClicked) {
+                    document.getElementById("Q3-flip-a-question").style.display = 'none';
+                } else {
+                    document.getElementById("Q3-flip-a-question").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q3-flip-a-question").addEventListener("click", function () {
+                q3faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question3').style.display = "none";
+                document.getElementById('optionA3').style.display = "none";
+                document.getElementById('optionB3').style.display = "none";
+                document.getElementById('optionC3').style.display = "none";
+                document.getElementById('optionD3').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+
+
+            // Question 4's flip-a-question logic
+            document.getElementById("showOptionsBtn4").addEventListener("click", function () {
+                if (q1faqClicked || q2faqClicked || q3faqClicked) {
+                    document.getElementById("Q4-flip-a-question").style.display = 'none';
+                } else {
+                    document.getElementById("Q4-flip-a-question").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q4-flip-a-question").addEventListener("click", function () {
+                q4faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question4').style.display = "none";
+                document.getElementById('optionA4').style.display = "none";
+                document.getElementById('optionB4').style.display = "none";
+                document.getElementById('optionC4').style.display = "none";
+                document.getElementById('optionD4').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+            // Question 5's flip-a-question logic
+            document.getElementById("showOptionsBtn5").addEventListener("click", function () {
+                if (q1faqClicked || q2faqClicked || q3faqClicked || q4faqClicked) {
+                    document.getElementById("Q5-flip-a-question").style.display = 'none';
+                } else {
+                    document.getElementById("Q5-flip-a-question").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q5-flip-a-question").addEventListener("click", function () {
+                q5faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question5').style.display = "none";
+                document.getElementById('optionA5').style.display = "none";
+                document.getElementById('optionB5').style.display = "none";
+                document.getElementById('optionC5').style.display = "none";
+                document.getElementById('optionD5').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+            // Question 6's flip-a-question logic
+            document.getElementById("showOptionsBtn6").addEventListener("click", function () {
+                if (q1faqClicked || q2faqClicked || q3faqClicked || q4faqClicked || q5faqClicked) {
+                    document.getElementById("Q6-flip-a-question").style.display = 'none';
+                } else {
+                    document.getElementById("Q6-flip-a-question").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q6-flip-a-question").addEventListener("click", function () {
+                q6faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question6').style.display = "none";
+                document.getElementById('optionA6').style.display = "none";
+                document.getElementById('optionB6').style.display = "none";
+                document.getElementById('optionC6').style.display = "none";
+                document.getElementById('optionD6').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+
+            // Question 7's flip-a-question logic
+            document.getElementById("showOptionsBtn7").addEventListener("click", function () {
+                if (q1faqClicked || q2faqClicked || q3faqClicked || q4faqClicked || q5faqClicked || q6faqClicked) {
+                    document.getElementById("Q7-flip-a-question").style.display = 'none';
+                } else {
+                    document.getElementById("Q7-flip-a-question").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q7-flip-a-question").addEventListener("click", function () {
+                q7faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question7').style.display = "none";
+                document.getElementById('optionA7').style.display = "none";
+                document.getElementById('optionB7').style.display = "none";
+                document.getElementById('optionC7').style.display = "none";
+                document.getElementById('optionD7').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+
+            // Question 8's flip-a-question logic
+            document.getElementById("showOptionsBtn8").addEventListener("click", function () {
+                if (q1faqClicked || q2faqClicked || q3faqClicked || q4faqClicked || q5faqClicked || q6faqClicked || q7faqClicked) {
+                    document.getElementById("Q8-flip-a-question").style.display = 'none';
+                } else {
+                    document.getElementById("Q8-flip-a-question").style.display = 'block';
+                }
+            });
+
+            document.getElementById("Q8-flip-a-question").addEventListener("click", function () {
+                q8faqClicked = true;
+                this.style.display = "none";
+                document.getElementById('question8').style.display = "none";
+                document.getElementById('optionA8').style.display = "none";
+                document.getElementById('optionB8').style.display = "none";
+                document.getElementById('optionC8').style.display = "none";
+                document.getElementById('optionD8').style.display = "none";
+
+                document.getElementById('faq').style.display = "block";
+                document.getElementById("faqA").style.display = "block";
+                document.getElementById("faqB").style.display = "block";
+                document.getElementById("faqC").style.display = "block";
+                document.getElementById("faqD").style.display = "block";
+            });
+
+            document.getElementById("faqB").addEventListener("click", function () {
+                // Ensure `a` is defined and holds a valid value
+                if (typeof a === 'undefined' || a < 1 || a > 8) {
+                    console.log("mujhe kuch samajh nahi aara");
+                    return;
+                }
+
+                // Get the correct answer box and next button elements based on the value of `a`
+                let correctAnswerBox = document.getElementById(`correctAnswerBox${a}`);
+                let nextBtn = document.getElementById(`nextBtn${a}`);
+
+                // Display the correct answer box if it exists
+                if (correctAnswerBox) {
+                    correctAnswerBox.style.display = 'block';
+                }
+
+                // Display the next button if it exists
+                if (nextBtn) {
+                    nextBtn.style.display = 'block';
+                }
+            });
+
+
+
+            //----------------------------------Fireworks Logic
+            var c = document.getElementById("Canvas");
+            var ctx = c.getContext("2d");
+
+            var cwidth, cheight;
+            var shells = [];
+            var pass = [];
+
+            var colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF', '#40C4FF', '#18FFFF', '#64FFDA', '#69F0AE', '#B2FF59', '#EEFF41', '#FFFF00', '#FFD740', '#FFAB40', '#FF6E40'];
+
+            window.onresize = function () { reset(); }
+            reset();
+            function reset() {
+
+                cwidth = window.innerWidth;
+                cheight = window.innerHeight;
+                c.width = cwidth;
+                c.height = cheight;
+            }
+
+            function newShell() {
+
+                var left = (Math.random() > 0.5);
+                var shell = {};
+                shell.x = (1 * left);
+                shell.y = 1;
+                shell.xoff = (0.01 + Math.random() * 0.007) * (left ? 1 : -1);
+                shell.yoff = 0.01 + Math.random() * 0.007;
+                shell.size = Math.random() * 6 + 3;
+                shell.color = colors[Math.floor(Math.random() * colors.length)];
+
+                shells.push(shell);
+            }
+
+            function newPass(shell) {
+
+                var pasCount = Math.ceil(Math.pow(shell.size, 2) * Math.PI);
+
+                for (i = 0; i < pasCount; i++) {
+
+                    var pas = {};
+                    pas.x = shell.x * cwidth;
+                    pas.y = shell.y * cheight;
+
+                    var a = Math.random() * 4;
+                    var s = Math.random() * 10;
+
+                    pas.xoff = s * Math.sin((5 - a) * (Math.PI / 2));
+                    pas.yoff = s * Math.sin(a * (Math.PI / 2));
+
+                    pas.color = shell.color;
+                    pas.size = Math.sqrt(shell.size);
+
+                    if (pass.length < 1000) { pass.push(pas); }
+                }
+            }
+
+            var lastRun = 0;
+            Run();
+            function Run() {
+
+                var dt = 1;
+                if (lastRun != 0) { dt = Math.min(50, (performance.now() - lastRun)); }
+                lastRun = performance.now();
+
+                //ctx.clearRect(0, 0, cwidth, cheight);
+                ctx.fillStyle = "rgba(0,0,0,0.25)";
+                ctx.fillRect(0, 0, cwidth, cheight);
+
+                if ((shells.length < 10) && (Math.random() > 0.96)) { newShell(); }
+
+                for (let ix in shells) {
+
+                    var shell = shells[ix];
+
+                    ctx.beginPath();
+                    ctx.arc(shell.x * cwidth, shell.y * cheight, shell.size, 0, 2 * Math.PI);
+                    ctx.fillStyle = shell.color;
+                    ctx.fill();
+
+                    shell.x -= shell.xoff;
+                    shell.y -= shell.yoff;
+                    shell.xoff -= (shell.xoff * dt * 0.001);
+                    shell.yoff -= ((shell.yoff + 0.2) * dt * 0.00005);
+
+                    if (shell.yoff < -0.005) {
+                        newPass(shell);
+                        shells.splice(ix, 1);
+                    }
+                }
+
+                for (let ix in pass) {
+
+                    var pas = pass[ix];
+
+                    ctx.beginPath();
+                    ctx.arc(pas.x, pas.y, pas.size, 0, 2 * Math.PI);
+                    ctx.fillStyle = pas.color;
+                    ctx.fill();
+
+                    pas.x -= pas.xoff;
+                    pas.y -= pas.yoff;
+                    pas.xoff -= (pas.xoff * dt * 0.001);
+                    pas.yoff -= ((pas.yoff + 5) * dt * 0.0005);
+                    pas.size -= (dt * 0.002 * Math.random())
+
+                    if ((pas.y > cheight) || (pas.y < -50) || (pas.size <= 0)) {
+                        pass.splice(ix, 1);
+                    }
+                }
+                requestAnimationFrame(Run);
+            }
+
+
+            // ----------------------------Trial Phase-----------------------
+            const textContainer = document.getElementById('text-container');
+            const canvas = document.getElementById('Canvas');
+            const cty = canvas.getContext('2d');
+
+            // Set canvas dimensions
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Draw text on canvas
+            function drawText() {
+                cty.clearRect(0, 0, canvas.width, canvas.height);
+                cty.font = 'bold 72px Arial';
+                cty.fillStyle = 'green';
+                cty.textAlign = 'center';
+                cty.textBaseline = 'middle';
+                cty.fillText('7 Crore', canvas.width / 2, canvas.height / 2);
+            }
+
+            drawText();
+            // --------------------------------tik tik ghadi logic
+            document.getElementById('showOptionsBtn1').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn2').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn3').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn4').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn5').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn6').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn7').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn8').addEventListener('click', function () {
+                startTimer();
+            }); document.getElementById('showOptionsBtn9').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('showOptionsBtn10').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox1').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox2').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox3').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox4').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox5').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox6').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox7').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox8').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox9').addEventListener('click', function () {
+                startTimer();
+            });
+            document.getElementById('wrongAnswerBox10').addEventListener('click', function () {
+                startTimer();
+            });
+
+            document.getElementById('timesup').addEventListener('click', function () {
+                startTicTicAudio();
+                // Restart the timer
+                startTimer();
+
+                // Show the question and options
+                document.getElementById('question1').style.display = 'block';
+                document.getElementById('optionA1').style.display = 'block';
+                document.getElementById('optionB1').style.display = 'block';
+                document.getElementById('optionC1').style.display = 'block';
+                document.getElementById('optionD1').style.display = 'block';
+
+                // Hide the timesup message
+                this.style.display = 'none';
+            });
+
+            document.getElementById("faqA").addEventListener('click', function () {
+                // Stop the timer
+                clearInterval(window.timerInterval);
+                stopTicTicAudio();
+            });
+            document.getElementById("faqB").addEventListener('click', function () {
+                // Stop the timer
+                clearInterval(window.timerInterval);
+                stopTicTicAudio();
+            });
+            document.getElementById("faqC").addEventListener('click', function () {
+                // Stop the timer
+                clearInterval(window.timerInterval);
+                stopTicTicAudio();
+            });
+            document.getElementById("faqD").addEventListener('click', function () {
+                // Stop the timer
+                clearInterval(window.timerInterval);
+                stopTicTicAudio();
+            });
+            function startTimer() {
+                let timeLeft = 30;
+                const timerDisplay = document.getElementById('timer');
+                const timesup = document.getElementById('timesup');
+
+                // IDs of the elements to hide when the timer ends
+                const optionsToHide = ['optionA1', 'optionB1', 'optionC1', 'optionD1', 'question1', 'faq', 'faqA', 'faqB', 'faqC', 'faqD', 'question2', 'optionA2', 'optionB2', 'optionC2', 'optionD2', 'question3', 'optionA3', 'optionB3', 'optionC3', 'optionD3', 'question4', 'optionA4', 'optionB4', 'optionC4', 'optionD4', 'question5', 'optionA5', 'optionB5', 'optionC5', 'optionD5', 'question6', 'optionA6', 'optionB6', 'optionC6', 'optionD6', 'question7', 'optionA7', 'optionB7', 'optionC7', 'optionD7', 'question8', 'optionA8', 'optionB8', 'optionC8', 'optionD8', 'question9', 'optionA9', 'optionB9', 'optionC9', 'optionD9', 'question10', 'optionA10', 'optionB10', 'optionC110', 'optionD10'];
+
+                // Display the initial time
+                timerDisplay.innerHTML = timeLeft;
+
+                // Clear any existing interval to avoid multiple intervals running simultaneously
+                if (window.timerInterval) {
+                    clearInterval(window.timerInterval);
+                }
+
+                // Update the timer every second
+                window.timerInterval = setInterval(() => {
+                    // Reduce timeLeft by 1
+                    timeLeft--;
+
+                    // Display the updated time
+                    timerDisplay.innerHTML = timeLeft;
+
+                    // Check if timeLeft is 0, if so, stop the timer and show 'timesup' element
+                    if (timeLeft <= 0) {
+                        clearInterval(window.timerInterval);
+                        timesup.style.display = 'block';
+
+                        // Hide the option elements
+                        optionsToHide.forEach(id => {
+                            const element = document.getElementById(id);
+                            if (element) {
+                                element.style.display = 'none';
+                            }
+                        });
+                    }
+                }, 1000);
+            }
+        };
+
+    </script>
+</body>
+
+</html>
